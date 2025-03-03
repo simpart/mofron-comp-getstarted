@@ -74,7 +74,7 @@ module.exports = class extends mofron.class.Component {
                     (c1,c2,c3) => {
                         try {
                             if (null !== c3.start()) {
-                                window.location.href(c3.start());
+                                window.location.href = c3.start();
                             }
                         } catch (e) {
                             console.error(e.stack);
@@ -101,34 +101,6 @@ module.exports = class extends mofron.class.Component {
 
 	    this.child(conts_area);
 	    this.childDom(conts_area.childDom());
-	    
-            
-/*
-<div style="position:relative;">
-        <Image style="opacity:0.3;" size=(80%,3.5rem) effect=HrzPos>./img/landing_top.png</Image>
-
-	<div style="position:absolute;top:0.5rem;left:0;right:0;margin:auto;">
-	    <layout>
-	        <loMargin>top,0.3rem</loMargin>
-	    </layout>
-	    <div>
-	        <Text size=0.35rem style="text-align:center;">Simple Chart Generator</Text>
-                <Text size=0.32rem style="text-align:center;">
-	            <text>"Instantly Create Charts, Make Presentations Impactful"</text>
-	        </Text>
-	    </div>
-            <Button size=(4rem,0.4rem) effect=HrzPos click-event=@start>
-	        <text>Get Started (All for Free)</text>
-	    </Button>
-	    <Text style="text-align:center;" size=0.2rem event=evLink:"./tos.html">
-	        <main-color forced=true lock=true>blue</main-color>
-	        <text>"Terms of Service"</text>
-            </Text>
-	</div>
-
-</div>
-*/
-
         } catch (e) {
             console.error(e.stack);
             throw e;
@@ -151,6 +123,15 @@ module.exports = class extends mofron.class.Component {
         }
     }
 
+    imageSize (wid, hei) {
+        try {
+            this.image().size(wid, hei);
+	} catch (e) {
+            console.error(e.stack);
+            throw e;
+        }
+    }
+
     text (txt1, txt2) {
         try {
             this.text1(txt1);
@@ -161,10 +142,11 @@ module.exports = class extends mofron.class.Component {
         }
     }
 
-    text1 (prm) {
+    text1 (prm, cnf) {
         try {
             if ('string' === typeof prm) {
                 this.text1().text(prm);
+		this.text1().config(cnf);
                 return;
             }
             return this.innerComp('text1',prm, Text);
@@ -174,10 +156,11 @@ module.exports = class extends mofron.class.Component {
         }
     }
 
-    text2 (prm) {
+    text2 (prm, cnf) {
         try {
             if ('string' === typeof prm) {
                 this.text2().text(prm);
+		this.text2().config(cnf);
                 return;
             }
             return this.innerComp('text2',prm, Text);
@@ -195,6 +178,15 @@ module.exports = class extends mofron.class.Component {
             }
             return this.innerComp('button',prm, Button);
         } catch (e) {
+            console.error(e.stack);
+            throw e;
+        }
+    }
+
+    buttonSize (wid, hei) {
+        try {
+            this.button().size(wid, hei);
+	} catch (e) {
             console.error(e.stack);
             throw e;
         }

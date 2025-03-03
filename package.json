@@ -1,0 +1,30 @@
+{
+  "name": "mofron-comp-getstarted",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "mofron-comp-text":"",
+    "mofron-comp-image":"",
+    "mofron-comp-button":"",
+    "mofron-effect-hrzpos":"",
+    "mofron-layout-margin":""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simpart/mofron-comp-getstarted.git"
+  },
+  "keywords": [
+    "mofron",
+    "front-end"
+  ],
+  "author": "simparts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simpart/mofron-comp-getstarted/issues"
+  },
+  "homepage": "https://github.com/simpart/mofron-comp-getstarted#readme",
+  "description": ""
+}
